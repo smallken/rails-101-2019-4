@@ -13,6 +13,13 @@
       <tr>
          <th>文章内容</th>
          <th>发表者</th>
+         <span class="pull-right">
+          <% if current_user && current_user.is_member_of?(@group) %>
+            <label class="label label-success"> 群组成员 </label>
+          <% else %>
+            <label class="label label-warning"> 不是群组成员 </label>
+          <% end %>
+        </span>
          <th>发表时间</th>
        </tr>
      </thead>
